@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "open62541.h": "c"
+        "open62541.h": "c",
+        "signal.h": "c"
     }
 }

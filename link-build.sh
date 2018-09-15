@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PWD=$(pwd)
-LIB_DIR=${PWD}/open62541
+MPWD=$(pwd)
+LIB_DIR=${MPWD}/open62541
 BUILD_DIR=${LIB_DIR}/build
 
 cd ${LIB_DIR}
@@ -19,8 +19,11 @@ cmake -DBUILD_SHARED_LIBS=ON \
 make -j9
 sudo make install
 
-cd ${PWD}
-gcc --std=c99 -o server server.c -I ./open62541/build -L ./open62541/build/bin/ -lopen62541
-gcc --std=c99 -o client client.c -I ./open62541/build -L ./open62541/build/bin/ -lopen62541
+cd ${MPWD}
+# gcc --std=c99 -o server server.c -I ./open62541/build -L ./open62541/build/bin/ -lopen62541
+# gcc --std=c99 -o client client.c -I ./open62541/build -L ./open62541/build/bin/ -lopen62541
+
+gcc --std=c99 -o  ${MPWD}/server  ${MPWD}/server.c -lopen62541
+gcc --std=c99 -o  ${MPWD}/client  ${MPWD}/client.c -lopen62541
 
 ./server

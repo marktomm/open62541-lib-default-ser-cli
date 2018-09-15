@@ -1,5 +1,5 @@
 #include <signal.h>
-#include "open62541/build/open62541.h"
+#include "open62541/open62541.h"
 
 UA_Boolean running = true;
 void signalHandler(int sig) {
