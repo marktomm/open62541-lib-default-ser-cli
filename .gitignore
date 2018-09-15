@@ -1,0 +1,5 @@
+/server
+/client
+/open62541.h
+/open62541.c
+/libopen62541*
